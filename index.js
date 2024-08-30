@@ -8,6 +8,9 @@ const { notFound, errorHandler } = require("./middlewares/errorHandler");
 
 // Connect to the database
 dbConnect();
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+});
 
 // Middleware to parse JSON and URL-encoded bodies
 app.use(express.json());
