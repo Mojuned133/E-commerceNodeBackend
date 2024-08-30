@@ -17,7 +17,7 @@ const createUser = asyncHandler(async (req, res) => {
   const { email, firstName, secondName, mobile, password } = req.body;
 
   // Check if user already exists
-  const findUser = await User.findOne({ email });
+  const findUser = await User.findOne({ email }).maxTimeMS(40000);
   if (findUser) {
     res.status(409).json({ message: "User already exists" });
     return;
