@@ -16,8 +16,8 @@ app.use(express.urlencoded({ extended: false }));
 // User routes
 app.use("/api/user", authRouter);
 
-app.use(notFound)
-app.use(errorHandler)
+app.use(notFound);
+app.use(errorHandler);
 
 // Start the server
 app.listen(PORT, () => {
